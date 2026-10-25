@@ -1,0 +1,3 @@
+- insert:
+    - id: provider-icons
+      name: 'dsh-plugin-provider-icons'

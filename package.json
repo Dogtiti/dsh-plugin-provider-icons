@@ -1,0 +1,55 @@
+{
+  "name": "dsh-plugin-provider-icons",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Shows each provider's brand mark beside the model name in the DeepSeek Harness composer model selector.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek",
+    "harness",
+    "model",
+    "provider",
+    "icons",
+    "logo"
+  ],
+  "author": "Dogtiti",
+  "license": "MIT",
+  "homepage": "https://github.com/Dogtiti/dsh-plugin-provider-icons#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dogtiti/dsh-plugin-provider-icons"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "dsh": "^0.2.1-0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
